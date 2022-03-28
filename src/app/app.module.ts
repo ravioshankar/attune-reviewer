@@ -7,12 +7,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DataEditorComponent } from './data-editor/data-editor.component';
 import { MapViewerComponent } from './map-viewer/map-viewer.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataEditorComponent,
-    MapViewerComponent
+    MapViewerComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
