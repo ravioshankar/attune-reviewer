@@ -1,0 +1,13 @@
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .tool-panel-container {
+    display: flex;
+    flex-direction: row;
+    z-index: 10;
+    position: absolute;
+    align-self: flex-end;
+    align-items: flex-end;
+  }
+  

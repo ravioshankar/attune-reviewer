@@ -9,13 +9,15 @@ import { DataEditorComponent } from './data-editor/data-editor.component';
 import { MapViewerComponent } from './map-viewer/map-viewer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolpanelComponent } from './toolpanel/toolpanel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataEditorComponent,
     MapViewerComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ToolpanelComponent
   ],
   imports: [
     BrowserModule,
