@@ -1,0 +1,26 @@
+.map {
+    height: calc(100vh - 64px);
+    width: 70%;
+    float: right;
+  }
+
+  .toolkit{
+    z-index: 10;
+    position: absolute;
+
+  }
+
+  .map-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sidepanel {
+    background: #acdae0;
+    width: 30%;
+    height: calc(100vh - 64px);
+    float: right;
+  }
+
+
+

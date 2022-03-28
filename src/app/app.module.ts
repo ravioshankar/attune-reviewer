@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DataEditorComponent } from './data-editor/data-editor.component';
+import { MapViewerComponent } from './map-viewer/map-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataEditorComponent
+    DataEditorComponent,
+    MapViewerComponent
   ],
   imports: [
     BrowserModule,
