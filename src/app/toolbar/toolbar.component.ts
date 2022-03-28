@@ -1,26 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import GeoJSON from 'ol/format/GeoJSON';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-toolpanel',
-  templateUrl: './toolpanel.component.html',
-  styleUrls: ['./toolpanel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-toolbar',
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.scss']
 })
-export class ToolpanelComponent implements OnInit {
+export class ToolbarComponent implements OnInit {
 
-  panelOpenState = false;
-  geoJson: GeoJSON | undefined;
   constructor() { }
-  @Input()
-  setData(data: GeoJSON) {
-    this.geoJson = data;
-  }
-
+  title = 'Re-Viewer';
   ngOnInit(): void {
   }
 
-  onGeojsonData(geojsonData: GeoJSON) {
-    this.geoJson = geojsonData;
-  }
 }

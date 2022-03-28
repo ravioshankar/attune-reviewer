@@ -1,13 +1,11 @@
-.mat-form-field + .mat-form-field {
-    margin-left: 8px;
+.example-spacer {
+    flex: 1 1 auto;
   }
-  
-  .tool-panel-container {
+
+  .socialBrand {
     display: flex;
-    flex-direction: row;
-    z-index: 10;
-    position: absolute;
-    align-self: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 14px 10px 6px 10px;
   }
-  
