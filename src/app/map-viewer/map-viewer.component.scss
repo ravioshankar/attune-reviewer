@@ -1,14 +1,15 @@
 .map {
     height: calc(100vh - 64px);
-    width: 70%;
-    float: right;
+    width: 100%;
+    // width: auto;
+    // float: right;
   }
 
-  .toolkit{
-    z-index: 10;
-    position: absolute;
+  // .toolkit{
+  //   z-index: 10;
+  //   position: relative;
 
-  }
+  // }
 
   .map-container{
     display: flex;
@@ -16,10 +17,12 @@
   }
 
   .sidepanel {
-    background: #acdae0;
-    width: 30%;
-    height: calc(100vh - 64px);
+    // background: #acdae0;
+    background: transparent;
+    // width: 20%;
+    // height: calc(100vh - 100px);
     float: right;
+    z-index: 11;
   }
 
 

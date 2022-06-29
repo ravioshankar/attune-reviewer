@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MONACO_PATH } from '@materia-ui/ngx-monaco-editor';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
+import { ChartsModule } from './charts-container/charts.module';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChartsModule
   ],
   providers: [
     {

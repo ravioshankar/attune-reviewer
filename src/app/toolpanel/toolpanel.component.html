@@ -1,5 +1,5 @@
 <div class="tool-panel-container">
-    <!-- <mat-accordion >
+    <mat-accordion >
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -12,9 +12,8 @@
           </mat-expansion-panel-header>
           <app-data-editor></app-data-editor>
         </mat-expansion-panel>
-      </mat-accordion> -->
-    
-      <app-data-editor (geojsonData)="onGeojsonData($event)" [inputData]="geoJson"></app-data-editor>
-    
+      </mat-accordion>
+
+      <!-- <app-data-editor (geojsonData)="onGeojsonData($event)" [inputData]="geoJson"></app-data-editor> -->
+
     </div>
-    
