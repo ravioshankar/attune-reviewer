@@ -17,60 +17,54 @@ export class RadarChartComponent implements OnInit {
   }
 
   // Radar
-  public radarChartOptions: any = {
+  public radarChartOptions: {} = {
     responsive: true,
     plugins: {
       title: {
         display: true,
         text: 'Chart.js Radar Chart'
       }
-    }
+    },
+    scales: {
+      r: {
+          angleLines: {
+              display: true
+          },
+          suggestedMin: 50,
+          suggestedMax: 100
+      }
+  }
   };
-  public radarChartLabels: string[] = ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'];
+  public radarChartLabels: string[] = ['Maths & Stat', 'English', 'Physics', 'Chemistry', 'Computer Science', 'PT', 'Economics'];
 
   public radarChartData = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: this.radarChartLabels,
     datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
+        label: 'Series A',
+        data: [65, 59, 90, 81, 56, 55, 50],
+        fill: true,
+    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    borderColor: 'rgb(255, 99, 132)',
+    pointBackgroundColor: 'rgb(255, 99, 132)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(255, 99, 132)',
+        borderWidth: 2,
+        hoverBorderJoinStyle: 'miter'
     },
     {
-      label: '# of Male Voters',
-      data: [17, 1, 3, 2, 5, 3],
-      backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1
+      label: 'Series B',
+      data: [78, 48, 40, 19, 96, 71, 80],
+      fill: true,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgb(54, 162, 235)',
+      pointBackgroundColor: 'rgb(54, 162, 235)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(54, 162, 235)',
+      borderWidth: 1,
+      hoverBorderJoinStyle: 'bevel'
+
   }
   ]
 };
