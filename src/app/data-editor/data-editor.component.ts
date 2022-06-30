@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MonacoEditorComponent, MonacoEditorConstructionOptions, MonacoEditorLoaderService, MonacoStandaloneCodeEditor } from '@materia-ui/ngx-monaco-editor';
 import { filter, take } from 'rxjs';
 import GeoJSON from 'ol/format/GeoJSON';
@@ -21,7 +21,7 @@ export class DataEditorComponent {
     autoIndent: 'full',
   };
   code = this.getCode();
-  reactiveForm: FormGroup;
+  reactiveForm: UntypedFormGroup;
   modelUri: monaco.Uri|any;
   data = {
     type: 'FeatureCollection',
@@ -173,7 +173,7 @@ export class DataEditorComponent {
   }
   constructor(
     private monacoLoaderService: MonacoEditorLoaderService,
-    private fb: FormBuilder
+    private fb: UntypedFormBuilder
   ) {
  
     this.reactiveForm = this.fb.group({
