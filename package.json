@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "nx",
-    "start": "ng serve --port 4300",
-    "build": "ng build",
+    "start": "npx nx serve attune-reviewer --configuration=development --port 4300",
+    "build": "nx run attune-reviewer:build:production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "nx run attune-reviewer:test",
     "postinstall": "node ./decorate-angular-cli.js"
   },
   "private": true,
