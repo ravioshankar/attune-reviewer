@@ -19,7 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MONACO_PATH } from '@materia-ui/ngx-monaco-editor';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { ChartsModule } from './charts-container/charts.module';
+import { Chart, LinearScale } from 'chart.js';
+import { VennDiagramController, ArcSlice } from 'chartjs-chart-venn';
 
+Chart.register(VennDiagramController, ArcSlice, LinearScale);
 @NgModule({
   declarations: [
     AppComponent,
