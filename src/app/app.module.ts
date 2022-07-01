@@ -22,6 +22,7 @@ import { Chart, LinearScale } from 'chart.js';
 import { VennDiagramController, ArcSlice } from 'chartjs-chart-venn';
 import { ChartsModule } from './charts-container/charts.module';
 
+
 Chart.register(VennDiagramController, ArcSlice, LinearScale);
 @NgModule({
   declarations: [

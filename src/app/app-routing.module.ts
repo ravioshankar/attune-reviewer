@@ -6,7 +6,9 @@ import { MapViewerComponent } from './map-viewer/map-viewer.component';
 
 const routes: Routes = [
   { path: '', component: MapViewerComponent },
-  { path: 'charts', component: ChartjsContainerComponent}
+  { path: 'charts', component: ChartjsContainerComponent,
+    children: [{path:'chartjs', component: ChartjsContainerComponent}]
+  }
 
 ];
 
