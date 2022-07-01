@@ -1,4 +1,6 @@
 <mat-toolbar color="primary">
+    <mat-toolbar-row>
+
     <div>
 
     <a routerLink="/" routerLinkActive="active" class="nav-link nav-text">
@@ -20,8 +22,22 @@
     </div>
 
     <span class="title"><b>{{ title }}</b></span>
-
     <span class="example-spacer"></span>
+
+
+    <div class="menu-items">
+
+            <a routerLink="/" title="Maps">
+            <mat-icon [ngStyle]="{'color':'grey'}">map</mat-icon>
+          </a>
+          <a routerLink="charts" title="Charts">
+            <mat-icon [ngStyle]="{'color':'grey'}">score</mat-icon>
+          </a>
+
+    </div>
+    <span class="example-spacer"></span>
+
+
     <div class="socialBrand">
         <div>
             <a aria-label="RaviShankar on Twitter" target="_blank" rel="noopener"
@@ -66,6 +82,7 @@
             </a>
         </div>
     </div>
+</mat-toolbar-row>
 </mat-toolbar>
 
 

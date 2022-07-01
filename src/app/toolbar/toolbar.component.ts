@@ -9,6 +9,7 @@ export class ToolbarComponent implements OnInit {
 
   constructor() { }
   title = 'Attune';
+  changeText= false;
   ngOnInit(): void {
   }
 
