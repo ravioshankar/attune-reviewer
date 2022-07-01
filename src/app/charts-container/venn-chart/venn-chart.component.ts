@@ -1,9 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import * as d3 from 'd3';
 import { ChartConfiguration, ChartItem, ChartType, ChartTypeRegistry } from 'chart.js';
 import { Chart } from 'chart.js';
 import { DOCUMENT } from '@angular/common';
-import { VennDiagramChart } from 'chartjs-chart-venn';
 
 @Component({
   selector: 'app-venn-chart',
