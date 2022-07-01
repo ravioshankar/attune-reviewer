@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChartsContainerComponent } from './charts-container.component';
-import { VennChartComponent } from './venn-chart/venn-chart.component';
-import { RadarChartComponent } from './radar-chart/radar-chart.component';
+import { ChartjsContainerComponent } from './chartjs/chartjs-container.component';
+import { VennChartComponent } from './chartjs/venn-chart/venn-chart.component';
+import { RadarChartComponent } from './chartjs/radar-chart/radar-chart.component';
 import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
-    ChartsContainerComponent,
+    ChartjsContainerComponent,
     VennChartComponent,
     RadarChartComponent
   ],

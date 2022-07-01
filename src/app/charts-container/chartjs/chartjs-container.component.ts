@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
-  selector: 'app-charts-container',
-  templateUrl: './charts-container.component.html',
-  styleUrls: ['./charts-container.component.scss']
+  selector: 'app-chartjs-container',
+  templateUrl: './chartjs-container.component.html',
+  styleUrls: ['./chartjs-container.component.scss']
 })
-export class ChartsContainerComponent implements OnInit {
+export class ChartjsContainerComponent implements OnInit {
 
   private data = [
     {"Framework": "Vue", "Stars": "166443", "Released": "2014"},
