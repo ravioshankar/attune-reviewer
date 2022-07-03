@@ -9,7 +9,11 @@ export class ToolbarComponent implements OnInit {
 
   constructor() { }
   title = 'Attune';
-  changeText= false;
+  readonly menuItems = [
+    { link: '/home', label: 'Home', icon: null },
+    { link: '/about', label: 'About', icon: null },
+    { link: '/secured-feat', label: 'Secured Feature', icon: 'tuiIconLock' },
+  ];
   ngOnInit(): void {
   }
 
