@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VennChartComponent } from './venn-chart.component';
+Chart.register(VennDiagramController, ArcSlice);
 
 describe('VennChartComponent', () => {
   let component: VennChartComponent;
@@ -8,9 +9,8 @@ describe('VennChartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VennChartComponent ]
-    })
-    .compileComponents();
+      declarations: [VennChartComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

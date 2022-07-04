@@ -1,74 +1,74 @@
 :host {
-    flex-direction: column;
+  flex-direction: column;
+}
+
+.editor-container {
+  height: calc(100vh - 110px);
+  width: 410px;
+  padding: 2px;
+}
+
+mat-toolbar {
+  h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  
-  .editor-container {
-    height: calc(100vh - 110px);
-    width: 410px;
-    padding: 2px;
-  }
-  
-  mat-toolbar {
-    h1 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    h2 {
-      font-size: 15px;
-    }
-  }
-  
   h2 {
-    text-align: center;
-    margin: 30px;
+    font-size: 15px;
   }
-  
-  h3 {
-    text-align: center;
-    color: #2196f3;
-    margin: 10px;
-  }
-  mat-form-field {
-    margin: 15px;
-  }
-  mat-card {
-    padding: 0;
-    margin: 5px;
-    height: calc(100vh - 180px);
-  }
-  .basic-examples {
+}
+
+h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+h3 {
+  text-align: center;
+  color: #2196f3;
+  margin: 10px;
+}
+mat-form-field {
+  margin: 15px;
+}
+mat-card {
+  padding: 0;
+  margin: 5px;
+  height: calc(100vh - 180px);
+}
+.basic-examples {
+  min-height: 300px;
+  > div {
+    min-width: 300px;
     min-height: 300px;
-    > div {
-      min-width: 300px;
-      min-height: 300px;
+  }
+}
+
+.form-infos {
+  margin: 0 15px;
+  h4 {
+    margin: 10px 0;
+  }
+  .form-info {
+    margin-bottom: 10px;
+    span:last-child {
+      font-weight: bold;
     }
   }
-  
-  .form-infos {
-    margin: 0 15px;
-    h4 {
-      margin: 10px 0;
-    }
-    .form-info {
-      margin-bottom: 10px;
-      span:last-child {
-        font-weight: bold;
-      }
-    }
-    pre {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      background: #eeee;
-      padding: 10px;
-    }
+  pre {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #eeee;
+    padding: 10px;
   }
-  
-  .action-controller {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    padding: 5px;
-  }
+}
+
+.action-controller {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  padding: 5px;
+}

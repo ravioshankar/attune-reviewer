@@ -5,29 +5,34 @@
 </mat-toolbar> -->
 
 <div fxLayout="column" class="editor-container">
-    <!-- <div class="editor-container"> -->
-    
-          <form fxFlex="100" [formGroup]="reactiveForm" >
-            <ngx-monaco-editor
-              formControlName="code"
-              [options]="mergeOptions({ language: 'json' })"
-              ngDefaultControl
-            >
-            </ngx-monaco-editor>
-            <div class="action-controller">
-    
-              <div>
-                <button mat-raised-button color="secondary" (click)="resetForm()">Reset</button>
-              </div>
-      
-              <div> 
-              <button mat-raised-button color="secondary" type="submit" (click)="onSubmit()">
-                Submit
-              </button>
-            </div>
-            </div>
-          </form>
+  <!-- <div class="editor-container"> -->
+
+  <form fxFlex="100" [formGroup]="reactiveForm">
+    <ngx-monaco-editor
+      formControlName="code"
+      [options]="mergeOptions({ language: 'json' })"
+      ngDefaultControl
+    >
+    </ngx-monaco-editor>
+    <div class="action-controller">
+      <div>
+        <button mat-raised-button color="secondary" (click)="resetForm()">
+          Reset
+        </button>
+      </div>
+
+      <div>
+        <button
+          mat-raised-button
+          color="secondary"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </div>
     </div>
-    
-      <!-- </div> -->
-      
+  </form>
+</div>
+
+<!-- </div> -->

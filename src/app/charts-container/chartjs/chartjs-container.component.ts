@@ -4,15 +4,10 @@ import * as d3 from 'd3';
 @Component({
   selector: 'app-chartjs-container',
   templateUrl: './chartjs-container.component.html',
-  styleUrls: ['./chartjs-container.component.scss']
+  styleUrls: ['./chartjs-container.component.scss'],
 })
 export class ChartjsContainerComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-
-
-  }
-
+  ngOnInit(): void {}
 }

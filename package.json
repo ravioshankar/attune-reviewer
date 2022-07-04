@@ -7,7 +7,8 @@
     "build": "nx run attune-reviewer:build:production",
     "watch": "ng build --watch --configuration development",
     "test": "nx run attune-reviewer:test",
-    "postinstall": "node ./decorate-angular-cli.js"
+    "postinstall": "node ./decorate-angular-cli.js",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -48,17 +49,24 @@
     "@types/d3": "^7.4.0",
     "@types/jasmine": "~4.0.3",
     "@types/node": "^18.0.0",
+    "husky": "^8.0.1",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.1",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "lint-staged": "^13.0.3",
     "nx": "14.3.6",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
     "typescript": "~4.7.4"
   },
   "volta": {
     "node": "16.13.2",
     "npm": "8.4.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

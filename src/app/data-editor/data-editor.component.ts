@@ -1,6 +1,19 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewChild, Output, EventEmitter, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewChild,
+  Output,
+  EventEmitter,
+  Input,
+} from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { MonacoEditorComponent, MonacoEditorConstructionOptions, MonacoEditorLoaderService, MonacoStandaloneCodeEditor } from '@materia-ui/ngx-monaco-editor';
+import {
+  MonacoEditorComponent,
+  MonacoEditorConstructionOptions,
+  MonacoEditorLoaderService,
+  MonacoStandaloneCodeEditor,
+} from '@materia-ui/ngx-monaco-editor';
 import { filter, take } from 'rxjs';
 import GeoJSON from 'ol/format/GeoJSON';
 
@@ -8,12 +21,11 @@ import GeoJSON from 'ol/format/GeoJSON';
   selector: 'app-data-editor',
   templateUrl: './data-editor.component.html',
   styleUrls: ['./data-editor.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataEditorComponent {
-
   @ViewChild(MonacoEditorComponent, { static: false })
-  monacoComponent: MonacoEditorComponent| any;
+  monacoComponent: MonacoEditorComponent | any;
   editorOptions: MonacoEditorConstructionOptions = {
     theme: 'myCustomTheme',
     language: 'html',
@@ -22,7 +34,7 @@ export class DataEditorComponent {
   };
   code = this.getCode();
   reactiveForm: UntypedFormGroup;
-  modelUri: monaco.Uri|any;
+  modelUri: monaco.Uri | any;
   data = {
     type: 'FeatureCollection',
     crs: {
@@ -165,7 +177,7 @@ export class DataEditorComponent {
   @Output()
   clearMap = new EventEmitter();
 
-  @Input() 
+  @Input()
   setInputData(data: GeoJSON) {
     this.reactiveForm = this.fb.group({
       code: [JSON.stringify(data)],
@@ -175,7 +187,6 @@ export class DataEditorComponent {
     private monacoLoaderService: MonacoEditorLoaderService,
     private fb: UntypedFormBuilder
   ) {
- 
     this.reactiveForm = this.fb.group({
       code: [],
     });

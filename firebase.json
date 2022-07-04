@@ -1,10 +1,6 @@
 {
   "hosting": {
     "public": "dist/attune-reviewer",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }

@@ -15,13 +15,11 @@ import CircleStyle from 'ol/style/Circle';
 @Component({
   selector: 'app-map-viewer',
   templateUrl: './map-viewer.component.html',
-  styleUrls: ['./map-viewer.component.scss']
+  styleUrls: ['./map-viewer.component.scss'],
 })
 export class MapViewerComponent implements OnInit {
-
   map: Map | undefined;
-  data: GeoJSON | any = 
-  {
+  data: GeoJSON | any = {
     type: 'FeatureCollection',
     crs: {
       type: 'name',
@@ -4604,13 +4602,12 @@ export class MapViewerComponent implements OnInit {
       },
     ],
   };
-  
-  
-  constructor() { }
+
+  constructor() {}
 
   @Input()
-  clearMap: boolean| undefined;
-  
+  clearMap: boolean | undefined;
+
   @Input()
   geojson: GeoJSON | undefined;
 
@@ -4635,28 +4632,32 @@ export class MapViewerComponent implements OnInit {
     });
 
     let zoomControl = new Zoom({
-      zoomInTipLabel: "Zoom closer in",
-      zoomOutTipLabel: "Zoom further out",
-      className: "ol-zoom custom-zoom-control"
+      zoomInTipLabel: 'Zoom closer in',
+      zoomOutTipLabel: 'Zoom further out',
+      className: 'ol-zoom custom-zoom-control',
     });
 
     let attributionControl = new Attribution({
       collapsible: false,
-      collapsed: false
+      collapsed: false,
     });
 
     let rotateControl = new Rotate({
-      autoHide: true
+      autoHide: true,
     });
 
-    
     this.map = new Map({
-      controls: defaults().extend([overviewMapControl, zoomControl, attributionControl, rotateControl]),
+      controls: defaults().extend([
+        overviewMapControl,
+        zoomControl,
+        attributionControl,
+        rotateControl,
+      ]),
       target: 'map',
       layers: [
         new TileLayer({
-          source: source
-        })
+          source: source,
+        }),
       ],
       view: new View({
         projection: 'EPSG:4326',
@@ -4666,19 +4667,18 @@ export class MapViewerComponent implements OnInit {
     });
 
     this.addVectorDataLayer(this.data);
-
   }
 
   addVectorDataLayer(data: GeoJSON) {
     if (this.data && this.map !== undefined) {
       const featureCollection: GeoJSON = data;
       const s: any = new Stroke({ color: '#FF9C32', width: 2 });
-      const f: any =  new Fill({
+      const f: any = new Fill({
         color: 'rgb(4, 11, 70)',
-      })
+      });
       const image: any = new CircleStyle({
         radius: 5,
-        fill:f,
+        fill: f,
         stroke: s,
       });
 
@@ -4728,7 +4728,6 @@ export class MapViewerComponent implements OnInit {
           fill: new Fill({
             color: 'magenta',
           }),
-          
         }),
         Circle: new Style({
           stroke: new Stroke({
@@ -4741,8 +4740,8 @@ export class MapViewerComponent implements OnInit {
         }),
       };
       const styleFunction = (feature: any) => {
-      // @ts-ignore
-        return styles[feature.getGeometry().getType() ];
+        // @ts-ignore
+        return styles[feature.getGeometry().getType()];
       };
       const vectorSource = new VectorSource({
         features: [],
@@ -4760,20 +4759,18 @@ export class MapViewerComponent implements OnInit {
         this.map.addLayer(vectorLayer);
         this.map.getView().fit(vectorSource.getExtent());
       }
-    
     }
   }
 
   clearMapData(simpleChange: SimpleChanges) {
     if (simpleChange['clearMap'].currentValue) {
-      this.map?.getLayers()
+      this.map
+        ?.getLayers()
         .getArray()
-        .forEach((element:any) => {
+        .forEach((element: any) => {
           element.getSource().clear();
         });
       console.log(' clear map ', simpleChange['clearMap'].currentValue);
     }
   }
 }
-
-

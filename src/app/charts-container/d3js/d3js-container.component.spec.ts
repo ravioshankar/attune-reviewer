@@ -8,9 +8,8 @@ describe('D3jsContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ D3jsContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [D3jsContainerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(D3jsContainerComponent);
     component = fixture.componentInstance;

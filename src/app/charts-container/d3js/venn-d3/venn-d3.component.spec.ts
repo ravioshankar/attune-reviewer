@@ -8,9 +8,8 @@ describe('VennD3Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VennD3Component ]
-    })
-    .compileComponents();
+      declarations: [VennD3Component],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(VennD3Component);
     component = fixture.componentInstance;

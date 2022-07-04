@@ -8,9 +8,8 @@ describe('RadarD3Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RadarD3Component ]
-    })
-    .compileComponents();
+      declarations: [RadarD3Component],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RadarD3Component);
     component = fixture.componentInstance;

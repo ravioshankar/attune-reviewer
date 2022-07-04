@@ -9,13 +9,9 @@ describe('DataEditorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataEditorComponent ],
-      imports:[ RouterTestingModule,
-        ReactiveFormsModule,
-        FormsModule ]
-
-    })
-    .compileComponents();
+      declarations: [DataEditorComponent],
+      imports: [RouterTestingModule, ReactiveFormsModule, FormsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

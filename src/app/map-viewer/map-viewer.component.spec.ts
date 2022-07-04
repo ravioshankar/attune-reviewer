@@ -8,9 +8,8 @@ describe('MapViewerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapViewerComponent ]
-    })
-    .compileComponents();
+      declarations: [MapViewerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

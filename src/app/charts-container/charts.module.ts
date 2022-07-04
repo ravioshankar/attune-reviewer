@@ -19,14 +19,8 @@ import { AppRoutingModule } from '../app-routing.module';
     VennD3Component,
     RadarD3Component,
     ChartsContainerComponent,
-
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CommonModule,
-    NgChartsModule
-  ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  imports: [BrowserModule, AppRoutingModule, CommonModule, NgChartsModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ChartsModule { }
+export class ChartsModule {}
