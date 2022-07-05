@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, Input, OnInit } from '@angular/core';
+import { map, Observable, shareReplay } from 'rxjs';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
-  constructor() {}
+  @Input()
+  drawer: any;
+
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) => result.matches),
+      shareReplay()
+    );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
   title = 'Attune';
   readonly menuItems = [
     { link: '/home', label: 'Home', icon: null },

@@ -21,6 +21,10 @@ import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { Chart } from 'chart.js';
 import { VennDiagramController, ArcSlice } from 'chartjs-chart-venn';
 import { ChartsModule } from './charts-container/charts.module';
+import { HomeNavComponent } from './home-nav/home-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 Chart.register(VennDiagramController, ArcSlice);
 @NgModule({
@@ -30,6 +34,7 @@ Chart.register(VennDiagramController, ArcSlice);
     MapViewerComponent,
     ToolpanelComponent,
     DataEditorComponent,
+    HomeNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,9 @@ Chart.register(VennDiagramController, ArcSlice);
     }),
     BrowserAnimationsModule,
     ChartsModule,
+    LayoutModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [
     {

@@ -1,0 +1,24 @@
+<app-toolbar [drawer]="drawer"></app-toolbar>
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'push'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" title="Maps">
+        <mat-icon [ngStyle]="{ color: '#ffff' }">map</mat-icon> Map
+      </a>
+      <a mat-list-item routerLink="charts" title="Charts">
+        <mat-icon [ngStyle]="{ color: '#ffff' }">score</mat-icon> Chart
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

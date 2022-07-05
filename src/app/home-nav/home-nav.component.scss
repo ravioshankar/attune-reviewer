@@ -1,0 +1,53 @@
+.sidenav-container {
+  height: calc(100vh - 64px);
+  background: inherit;
+}
+
+.sidenav {
+  width: 200px;
+  margin-top: 64px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.socialBrand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 14px 10px 6px 10px;
+}
+
+.mat-icon {
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+// .menu-items{
+//   margin-top: 95px;
+//   z-index: 5;
+
+// }
+
+.menu-items {
+  border-left: 2px solid #dedede;
+  margin-left: 24px;
+  padding-left: 24px;
+
+  > a {
+    @apply aa--mx-1;
+  }
+}
