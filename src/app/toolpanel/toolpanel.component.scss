@@ -1,14 +1,11 @@
-.mat-form-field + .mat-form-field {
-  margin-left: 24px;
-}
+// .mat-form-field + .mat-form-field {
+//   margin-left: 24px;
+// }
 
 .tool-panel-container {
-  display: flex;
-  flex-direction: row;
-  z-index: 10;
+  // z-index: 10;
   position: relative;
-  // align-self: flex-end;
-  // align-items: flex-end;
+
   background: transparent;
-  // height: calc(100vh -  200px);;
+  height: calc(100vh - 64px);
 }

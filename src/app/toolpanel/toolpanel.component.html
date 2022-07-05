@@ -1,5 +1,4 @@
-<div class="tool-panel-container">
-  <!-- <mat-accordion [ngStyle] = "{'height':'400px'}">
+<!-- <mat-accordion [ngStyle] = "{'height':'400px'}">
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false"  >
           <mat-expansion-panel-header>
@@ -14,8 +13,25 @@
         </mat-expansion-panel>
       </mat-accordion> -->
 
-  <app-data-editor
+<!-- <app-data-editor
     (geojsonData)="onGeojsonData($event)"
     [inputData]="geoJson"
-  ></app-data-editor>
-</div>
+  ></app-data-editor> -->
+
+<mat-sidenav-container class="tool-panel-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="'navigation'"
+    [mode]="'side'"
+  >
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Add Content Here -->
+    <app-data-editor
+      (geojsonData)="onGeojsonData($event)"
+      [inputData]="geoJson"
+    ></app-data-editor>
+  </mat-sidenav-content>
+</mat-sidenav-container>
