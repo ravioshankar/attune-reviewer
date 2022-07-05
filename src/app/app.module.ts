@@ -25,6 +25,9 @@ import { HomeNavComponent } from './home-nav/home-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
 
 Chart.register(VennDiagramController, ArcSlice);
 @NgModule({
@@ -35,6 +38,7 @@ Chart.register(VennDiagramController, ArcSlice);
     ToolpanelComponent,
     DataEditorComponent,
     HomeNavComponent,
+    HomeDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +64,8 @@ Chart.register(VennDiagramController, ArcSlice);
     LayoutModule,
     MatSidenavModule,
     MatListModule,
+    MatGridListModule,
+    MatMenuModule,
   ],
   providers: [
     {

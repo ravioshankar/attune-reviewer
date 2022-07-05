@@ -10,10 +10,13 @@ import { AppComponent } from './app.component';
 import { ChartjsContainerComponent } from './charts-container/chartjs/chartjs-container.component';
 import { ChartsContainerComponent } from './charts-container/charts-container.component';
 import { D3jsContainerComponent } from './charts-container/d3js/d3js-container.component';
+import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 import { MapViewerComponent } from './map-viewer/map-viewer.component';
 
 const routes: Routes = [
-  { path: '', title: 'map view', component: MapViewerComponent },
+  { path: '', title: 'home dashboard', component: HomeDashboardComponent },
+
+  { path: 'maps', title: 'map view', component: MapViewerComponent },
   {
     path: 'charts',
     title: 'chart view',
