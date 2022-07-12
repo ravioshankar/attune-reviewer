@@ -123,6 +123,7 @@ const bw: any =2;
       { label: 'adventure sport', values: ['alex', 'casey', 'drew', 'hunter', 'jade'] },
       { label: 'Movies', values: ['casey', 'drew', 'jade'] },
       { label: 'Theme parks ', values: ['drew', 'glen', 'jade', 'casey','hunter'] },
+
     ],
     {
       label: 'Leisure Activities',
