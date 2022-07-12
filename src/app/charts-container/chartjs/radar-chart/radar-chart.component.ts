@@ -203,6 +203,10 @@ hoverBorderJoinStyle: 'bevel'
   // Radar
   public radarChartOptions: {} = {
     responsive: true,
+    events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+  //   onHover: (e: any) => {
+  //    alert("Hello world")
+  // },
     plugins: {
       title: {
         display: true,
@@ -218,7 +222,13 @@ hoverBorderJoinStyle: 'bevel'
           suggestedMin: 50,
           suggestedMax: 100
       }
-  }
+  },
+  legend: {
+    display: false,
+    labels: {
+        color: 'rgb(255, 99, 132)'
+    }
+}
   };
   public radarChartLabels: string[] = ['Maths & Stat', 'English', 'Physics', 'Chemistry', 'Computer Science', 'PT', 'Economics'];
 
@@ -228,7 +238,8 @@ hoverBorderJoinStyle: 'bevel'
         label: 'Series A',
         data: [65, 59, 90, 81, 56, 55, 50],
         fill: true,
-    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    backgroundColor: 'rgba(255, 99, 132, .4)',
+    hoverBackgroundColor: 'rgba(54, 162, 235, 0.5)',
     borderColor: 'rgb(255, 99, 132)',
     pointBackgroundColor: 'rgb(255, 99, 132)',
     pointBorderColor: '#fff',

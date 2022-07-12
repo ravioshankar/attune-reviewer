@@ -110,7 +110,8 @@ const bw: any =2;
           title: {
             display: true,
             text: 'Chart.js Venn Chart using Extract set'
-          }
+          },
+          
         }
       }
     }
@@ -120,9 +121,9 @@ const bw: any =2;
 
   const data1 = extractSets(
     [
-      { label: 'adventure sport', values: ['alex', 'casey', 'drew', 'hunter', 'jade'] },
+      // { label: 'adventure sport', values: ['alex', 'casey', 'drew', 'hunter', 'jade'] },
       { label: 'Movies', values: ['casey', 'drew', 'jade'] },
-      { label: 'Theme parks ', values: ['drew', 'glen', 'jade', 'casey','hunter'] },
+      { label: 'Theme parks ', values: ['drew', 'casey', 'drew', 'jade'] },
 
     ],
     {
@@ -231,7 +232,7 @@ const bw: any =2;
      const config : any =
    {
       type: 'venn',
-      data: sample,
+      data: data1,
       options: this.vennChartOptions
     };
 

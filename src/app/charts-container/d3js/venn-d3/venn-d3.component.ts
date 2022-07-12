@@ -15,6 +15,8 @@ export class VennD3Component implements OnInit {
   ngOnInit(): void {
 
     this.vennChart();
+    // getVennChart();
+
   }
 
 
@@ -58,14 +60,14 @@ export class VennD3Component implements OnInit {
 
     d3.selectAll("#venn .venn-circle")
       .on("mouseover", function (d, i) {
-        var node = d3.select(this).transition();
+        const node = d3.select(this).transition();
 
       node.select("path").style("fill-opacity", .2).style("stroke-opacity", 1);
         node.select("text").style("font-weight", "80")
           .style("font-size", "24px");
       })
       .on("mouseout", function (d, i) {
-        var node = d3.select(this).transition();
+        const node = d3.select(this).transition();
         node.select("path").style("fill-opacity", 0).style("stroke-opacity", 0.5);
         node.select("text").style("font-weight", "80")
           .style("font-size", "16px");
@@ -96,8 +98,8 @@ function getSetIntersections(): any {
     { sets: ['D'], size: 4 , "label": "$100k > "},
     { sets: ['E'], size: 4 , "label": "$1M > "},
     { sets: ['A', 'B'], size: 0, "label": "None" },
-    { sets: ['C', 'B'], size: 2 , "label": "People"},
-    { sets: ['A', 'C'], size: 4 , "label": "People"}
+    { sets: ['C', 'B'], size: 2 , "label": "number"},
+    { sets: ['A', 'C'], size: 4 , "label": "number"}
   ];
 
 //   return [
@@ -194,3 +196,68 @@ function getSetIntersections(): any {
 //     }
 // ]
 }
+
+
+// function getVennChart() {
+
+//   let sets = [
+//     {sets:["Audio"], figure: 8.91, label: "Audio", size: 8.91},
+//     {sets:["Direct Buy"], figure: 34.53, label: "Direct Buy", size: 34.53},
+//     {sets:["Branded Takeover"], figure: 40.9, label: "Branded Takeover", size: 40.9},
+//     {sets: ["Audio", "Direct Buy"], figure: 5.05, label: "Audio and Direct Buy", size: 5.05},
+//     {sets: ["Audio", "Branded Takeover"], figure: 3.65, label: "Audio and Branded Takeover", size: 3.65},
+//     {sets: ["Direct Buy", "Branded Takeover"], figure: 4.08, label: "Direct Buy and Branded Takeover", size: 4.08},
+//     {sets: ["Audio", "Direct Buy", "Branded Takeover"], figure: 2.8, label: "Audio, Direct Buy, and Branded Takeover", size: 2.8}
+//     ];
+
+//     var chart: any = VennDiagram()
+//     .width(500)
+//     .height(400)
+
+//     let div = d3.select("#venn-chart-1").datum(sets).call(chart);
+//     div.selectAll("text").style("fill", "white");
+//     div.selectAll(".venn-circle path")
+//             .style("fill-opacity", .8)
+//             .style("stroke-width", 1)
+//             .style("stroke-opacity", 1)
+//             .style("stroke", "fff");
+
+
+//             let tooltip = d3.select("#venn-chart-1").append("div")
+//             .attr("class", "venntooltip");
+
+
+//             div.selectAll("g")
+//             .on("mouseover", function(d, i) {
+//                 // sort all the areas relative to the current item
+//                 // sortAreas(div, d);
+//                 // Display a tooltip with the current size
+//                 tooltip.transition().duration(40).style("opacity", 1);
+//                 // tooltip.text(d.size + "% of Audience One saw " + d.label);
+
+//                 // highlight the current path
+//                 // highlight the current path
+//                 var selection = d3.select(this).transition("tooltip").duration(400);
+//                 selection.select("path")
+//                     .style("stroke-width", 3)
+//                     .style("fill-opacity", sets.length == 1 ? .8 : 0)
+//                     .style("stroke-opacity", 1);
+//             })
+
+//             // .on("mousemove", function() {
+
+//             //     // tooltip.style("left", (d) + "px")
+//             //     //        .style("top", (d - 28) + "px");
+//             // })
+
+//             // .on("mouseout", function(d, i) {
+//             //     tooltip.transition().duration(2000).style("opacity", 1);
+//             //     var selection = d3.select(this).transition("tooltip").duration(400);
+//             //     selection.select("path")
+//             //         .style("stroke-width", 3)
+//             //         .style("fill-opacity", sets.length == 1 ? .8 : 0)
+//             //         .style("stroke-opacity", 1);
+//             // });
+
+
+// }
