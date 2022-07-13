@@ -246,6 +246,7 @@ hoverBorderJoinStyle: 'bevel'
         label: 'Series A',
         data: [65, 59, 90, 81, 56, 55, 50],
         fill: true,
+    hoverOffset: 5,
     backgroundColor: 'rgba(255, 99, 132, .4)',
     hoverBackgroundColor: 'rgba(54, 162, 235, 0.5)',
     borderColor: 'rgb(255, 99, 132)',

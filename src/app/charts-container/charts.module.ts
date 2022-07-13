@@ -11,6 +11,7 @@ import { ChartsContainerComponent } from './charts-container.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
+import { DoughnutChartComponent } from './chartjs/doughnut-chart/doughnut-chart.component';
 @NgModule({
   declarations: [
     ChartjsContainerComponent,
@@ -19,7 +20,10 @@ import { MatButtonModule } from '@angular/material/button';
     D3jsContainerComponent,
     VennD3Component,
     RadarD3Component,
+    DoughnutChartComponent,
+
     ChartsContainerComponent,
+
   ],
   imports: [
     BrowserModule,
