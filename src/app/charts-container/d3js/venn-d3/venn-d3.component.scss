@@ -1,0 +1,30 @@
+
+
+
+
+.d3-wrapper{
+    // display: flex;
+    // align-items: flex-start;
+    // gap: 5px;
+}
+
+.venn-container {
+    width: 350px;
+    // height: 100px;
+
+}
+
+
+.venntooltip {
+    font-size : 14px;
+    position: absolute;
+    text-align: center;
+    width: 128px;
+    height: 85px;
+    background: #333;
+    color: #fff;
+    padding: 2px;
+    border: 0px;
+    border-radius: 8px;
+    opacity: 0;
+}

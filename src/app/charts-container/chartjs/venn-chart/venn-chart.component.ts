@@ -20,112 +20,263 @@ export class VennChartComponent implements OnInit {
   private width = 750 - this.margin * 2;
   private height = 400 - this.margin * 2;
 
-  constructor(@Inject(DOCUMENT) document: Document) {}
+  public vennChartOptions: any = {
+    responsive: true,
+    borderColor:[
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+  ],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+  ],
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Venn Chart'
+      }
+    }
+  };
+
+
+
+  public vennChartType: ChartType = 'venn';
+
+  public data = extractSets(
+    [
+      { label: 'Red Cards', values: [1, 2, 3, 4,5,6,7,8,9,10, 11, 12, 13] },
+      { label: 'Black Cards', values: [1, 2, 3, 11, 12, 13]},
+      { label: 'Diamonds', values: [ 11, 12, 13] },
+
+    ],
+    {
+      label: 'Venn v Eular',
+    }
+  );
+
+  constructor(@Inject(DOCUMENT) document: Document) {
+
+  }
 
   ngOnInit(): void {
     const ctx = document.getElementById('canvas');
 
-    const config: ChartConfiguration<
-      keyof ChartTypeRegistry,
+    const data = extractSets(
+      [
+        { label: 'Sparkling Drink', values: [1, 2, 3, 4, 11, 12, 13, 14, 15, 16, 17, 18] },
+        { label: 'Electronics', values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 19, 20, 21, 22, 23] },
+        // { label: 'Home improvements', values: [1, 11, 12, 4, 5, 24, 25, 26, 27, 28, 29, 30] },
+        { label: 'Cars', values: [1, 11, 12, 4, 5, 24, 25, 26, 27, 28, 29, 30] },
+        { label: 'Adventure Sport', values: [1, 11, 12, 4, 5, 24, 25, 26, 27, 28, 29, 30] },
+        { label: 'Leisure', values: [18, 11, 12, 4, 5, 24, 25, 26, 27, 28, 2, 3] }
+      ],
       {
-        sets: string[];
-        value: number;
-      }[],
-      string
-    > = {
+        label: 'Income > $1000000',
+      }
+    );
+
+    const ctx1 = document.getElementById('canvas1');
+    const bg: any =  [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+  ];
+  const bc:any= [
+      'rgba(255, 99, 132, 1)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+  ]
+const bw: any =2;
+    if (ctx1 != null) {
+    const x = new Chart(ctx1 as ChartItem, {
       type: 'venn',
-      data: {
-        labels: [
-          'Soccer',
-          'Tennis',
-          'Volleyball',
-          'Soccer ∩ Tennis',
-          'Soccer ∩ Volleyball',
-          'Tennis ∩ Volleyball',
-          'Soccer ∩ Tennis ∩ Volleyball',
-        ],
-        datasets: [
-          {
-            label: 'Sports',
-            data: [
-              { sets: ['Soccer'], value: 2 },
-              { sets: ['Tennis'], value: 0 },
-              { sets: ['Volleyball'], value: 1 },
-              { sets: ['Soccer', 'Tennis'], value: 1 },
-              { sets: ['Soccer', 'Volleyball'], value: 0 },
-              { sets: ['Tennis', 'Volleyball'], value: 1 },
-              { sets: ['Soccer', 'Tennis', 'Volleyball'], value: 1 },
-            ],
-          },
-        ],
-      },
+      data: data,
+
       options: {
         responsive: true,
+        borderColor:bc,
+        backgroundColor: bg,
         plugins: {
           title: {
             display: true,
-            text: 'Chart.js Venn Chart',
+            text: 'Chart.js Venn Chart using Extract set'
           },
-        },
-      },
-    };
 
-    //   const config1: ChartConfiguration<
-    //   keyof ChartTypeRegistry,
-    //   {
-    //     sets: string[];
-    //     value: number;
-    //   }[],
-    //   string
-    // > = {
-    //     type: 'venn',
-    //     data: extractSets(
-    //       [
-    //         { label: 'Soccer', values: ['alex', 'casey', 'drew', 'hunter'] },
-    //         { label: 'Tennis', values: ['casey', 'drew', 'jade'] },
-    //         { label: 'Volleyball', values: ['drew', 'glen', 'jade'] },
-    //       ],
-    //       {
-    //         label: 'Sports',
-    //       }
-    //     ),
-    //     options: {},
-    //   };
-
-    if (ctx != null) {
-      const myVennChart = new Chart(ctx as ChartItem, config);
+        }
+      }
     }
+      );
   }
 
-  public vennChartOptions: {} = {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Chart.js Venn Chart',
-      },
-    },
-    scales: {
-      r: {
-        angleLines: {
-          display: true,
-        },
-        suggestedMin: 50,
-        suggestedMax: 100,
-      },
-    },
-  };
-  public vennChartLabels: string[] = [
-    'Maths & Stat',
-    'English',
-    'Physics',
-    'Chemistry',
-    'Computer Science',
-    'PT',
-    'Economics',
-  ];
 
-  public vennChartData = {};
+  const data1 = extractSets(
+    [
+      // { label: 'adventure sport', values: ['alex', 'casey', 'drew', 'hunter', 'jade'] },
+      { label: 'Movies', values: ['casey', 'drew', 'jade'] },
+      { label: 'Theme parks ', values: ['drew', 'casey', 'drew', 'jade'] },
 
-  public vennChartType: ChartType = 'venn';
+    ],
+    {
+      label: 'Leisure Activities',
+    }
+  );
+
+
+  const sample = {
+    "labels": [
+        "adventure sport",
+        "Movies",
+        "Theme parks ",
+        "adventure sport ∩ Movies",
+        "adventure sport ∩ Theme parks ",
+        "Movies ∩ Theme parks ",
+        "adventure sport ∩ Movies ∩ Theme parks "
+    ],
+    "datasets": [
+        {
+            "label": "Leisure Activities",
+            "data": [
+                {
+                    "sets": [
+                        "adventure sport"
+                    ],
+                    "label": "adventure sport",
+                    "value": '1%',
+                    "values": [
+                        "alex"
+                    ],
+                    "degree": 1
+                },
+                {
+                    "sets": [
+                        "Movies"
+                    ],
+                    "label": "Movies",
+                    "value": "0%",
+                    "values": [],
+                    "degree": 1
+                },
+                {
+                    "sets": [
+                        "Theme parks "
+                    ],
+                    "label": "Theme parks ",
+                    "value": "1%",
+                    "values": [
+                        "glen"
+                    ],
+                    "degree": 1
+                },
+                {
+                    "sets": [
+                        "adventure sport",
+                        "Movies"
+                    ],
+                    "label": "adventure sport ∩ Movies",
+                    "value": "0%",
+                    "values": [],
+                    "degree": 2
+                },
+                {
+                    "sets": [
+                        "adventure sport",
+                        "Theme parks "
+                    ],
+                    "label": "adventure sport ∩ Theme parks ",
+                    "value": "1%",
+                    "values": [
+                        "hunter"
+                    ],
+                    "degree": 2
+                },
+                {
+                    "sets": [
+                        "Movies",
+                        "Theme parks "
+                    ],
+                    "label": "Movies ∩ Theme parks ",
+                    "value": "0%",
+                    "values": [],
+                    "degree": 2
+                },
+                {
+                    "sets": [
+                        "adventure sport",
+                        "Movies",
+                        "Theme parks "
+                    ],
+                    "label": "adventure sport ∩ Movies ∩ Theme parks ",
+                    "value": "3%",
+                    "values": [
+                        "casey",
+                        "drew",
+                        "jade"
+                    ],
+                    "degree": 3
+                }
+            ]
+        }
+    ]
+}
+
+     const config : any =
+   {
+      type: 'venn',
+      data: data1,
+      options: this.vennChartOptions
+    };
+
+
+    if (ctx != null) {
+      const myVennChart = new Chart(ctx as ChartItem, config)
+
+
+      // myVennChart.config.data.datasets.forEach((ds)=>{
+      //   ds.data.pop();
+      // })
+
+      // myVennChart.data.labels?.forEach(d => console.log(d));
+      myVennChart.update();
+    }
+
+    // const ctxVenn = document.getElementById('canvas-venn');
+    // const ctxEuler = document.getElementById('canvas-euler');
+
+    // if (ctxVenn != null || ctxEuler!= null) {
+
+    //   const vennConfigData : any =
+    //   {
+    //      type: 'venn',
+    //      data: this.data,
+    //      options: this.vennChartOptions
+    //    };
+
+    //    const eulerConfigData : any =
+    //    {
+    //       type: 'euler',
+    //       data: this.data,
+    //       options: this.vennChartOptions
+    //     };
+    //   const myVennChart = new Chart(ctxVenn as ChartItem, vennConfigData)
+    //   const myEulerChart = new Chart(ctxEuler as ChartItem, eulerConfigData)
+    // }
+
+  }
+
+
+
 }
