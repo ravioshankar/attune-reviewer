@@ -1,26 +1,40 @@
+<div id="map" class="map demo-area"></div>
+
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="3" rowHeight="350px">
-    <mat-grid-tile
-      *ngFor="let card of cards | async"
-      [colspan]="card.cols"
-      [rowspan]="card.rows"
-    >
+  <mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let card of cards | async">
       <mat-card class="dashboard-card">
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-header>
+          <mat-card-title>{{ card.title }}</mat-card-title>
+          <mat-card-subtitle>{{ card.title }}</mat-card-subtitle>
+        </mat-card-header>
         <mat-card-content>
-          <p>This card has divider and indeterminate progress as footer</p>
-          <p>{{ card.title }}</p>
+          <img mat-card-image src="{{ card.logoUrl }}" alt="{{ card.title }}" />
+
+          <!-- <p>This card has divider and indeterminate progress as footer</p> -->
         </mat-card-content>
         <mat-divider inset></mat-divider>
         <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+          <a
+            href="{{ card.siteUrl }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button mat-button>
+              <mat-icon>link</mat-icon>
+            </button>
+          </a>
+
+          <button mat-button>
+            <mat-icon>video_library</mat-icon>
+            <!-- <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon> -->
+          </button>
+          <!-- <button mat-button><mat-icon>subscriptions</mat-icon></button> -->
         </mat-card-actions>
-        <!-- <mat-card-footer>
+        <mat-card-footer>
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        </mat-card-footer> -->
+        </mat-card-footer>
       </mat-card>
 
       <!-- <mat-card class="dashboard-card">
