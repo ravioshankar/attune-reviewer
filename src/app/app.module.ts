@@ -25,10 +25,11 @@ import { HomeNavComponent } from './home-nav/home-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
+import { HomeDashboardComponent } from './dashboards/home-dashboard/home-dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MapsDashboardComponent } from './dashboards/maps-dashboard/maps-dashboard.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 Chart.register(VennDiagramController, ArcSlice);
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ Chart.register(VennDiagramController, ArcSlice);
     DataEditorComponent,
     HomeNavComponent,
     HomeDashboardComponent,
+    MapsDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ Chart.register(VennDiagramController, ArcSlice);
     MatListModule,
     MatGridListModule,
     MatMenuModule,
+    MatProgressBarModule,
   ],
   providers: [
     {

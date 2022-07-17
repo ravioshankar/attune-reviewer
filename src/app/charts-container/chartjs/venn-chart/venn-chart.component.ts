@@ -69,32 +69,6 @@ export class VennChartComponent implements OnInit {
         },
       },
     };
-
-    //   const config1: ChartConfiguration<
-    //   keyof ChartTypeRegistry,
-    //   {
-    //     sets: string[];
-    //     value: number;
-    //   }[],
-    //   string
-    // > = {
-    //     type: 'venn',
-    //     data: extractSets(
-    //       [
-    //         { label: 'Soccer', values: ['alex', 'casey', 'drew', 'hunter'] },
-    //         { label: 'Tennis', values: ['casey', 'drew', 'jade'] },
-    //         { label: 'Volleyball', values: ['drew', 'glen', 'jade'] },
-    //       ],
-    //       {
-    //         label: 'Sports',
-    //       }
-    //     ),
-    //     options: {},
-    //   };
-
-    if (ctx != null) {
-      const myVennChart = new Chart(ctx as ChartItem, config);
-    }
   }
 
   public vennChartOptions: {} = {
