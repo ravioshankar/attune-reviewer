@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "nx run attune-reviewer:test",
     "postinstall": "node ./decorate-angular-cli.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "doc:local": "compodoc -p ./tsconfig.compodoc.json -s -o -w",
+    "doc:app": "compodoc -p ./tsconfig.app.json --hideGenerator --disableCoverage --output=documentation"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^14.0.4",
     "@angular/router": "^14.0.4",
     "@angular/service-worker": "^14.0.4",
+    "@compodoc/compodoc": "^1.1.19",
     "@materia-ui/ngx-monaco-editor": "^6.0.0",
     "@nrwl/angular": "14.3.6",
     "@types/chart.js": "^2.9.37",
