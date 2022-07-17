@@ -7,6 +7,9 @@ import {
   platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 declare const require: {
   context(
     path: string,

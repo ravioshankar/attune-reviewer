@@ -12,6 +12,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { DoughnutChartComponent } from './chartjs/doughnut-chart/doughnut-chart.component';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 @NgModule({
   declarations: [
     ChartjsContainerComponent,
@@ -23,16 +25,14 @@ import { DoughnutChartComponent } from './chartjs/doughnut-chart/doughnut-chart.
     DoughnutChartComponent,
 
     ChartsContainerComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     NgChartsModule,
-    MatButtonModule
-
+    MatButtonModule,
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ChartsModule {}
