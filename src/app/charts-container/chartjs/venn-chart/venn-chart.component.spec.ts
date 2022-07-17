@@ -19,6 +19,6 @@ describe('VennChartComponent', () => {
   });
 
   xit('should create', () => {
-    // expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 });

@@ -18,17 +18,21 @@ export class D3jsContainerComponent implements OnInit {
   private margin = 50;
   private width = 750 - this.margin * 2;
   private height = 400 - this.margin * 2;
-
+  chart: any;
   constructor() {}
 
   ngOnInit(): void {
+    this.barChart();
+  }
+
+  barChart() {
     this.createSvg();
     this.drawBars(this.data);
   }
 
-  private createSvg(): void {
+  private createSvg(element = 'figure#bar'): void {
     this.svg = d3
-      .select('figure#bar')
+      .select(element)
       .append('svg')
       .attr('width', this.width + this.margin * 2)
       .attr('height', this.height + this.margin * 2)

@@ -10,6 +10,10 @@ import { RadarD3Component } from './d3js/radar-d3/radar-d3.component';
 import { ChartsContainerComponent } from './charts-container.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
+import { MatButtonModule } from '@angular/material/button';
+import { DoughnutChartComponent } from './chartjs/doughnut-chart/doughnut-chart.component';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 @NgModule({
   declarations: [
     ChartjsContainerComponent,
@@ -18,9 +22,17 @@ import { AppRoutingModule } from '../app-routing.module';
     D3jsContainerComponent,
     VennD3Component,
     RadarD3Component,
+    DoughnutChartComponent,
+
     ChartsContainerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, CommonModule, NgChartsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    NgChartsModule,
+    MatButtonModule,
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ChartsModule {}
