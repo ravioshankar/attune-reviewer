@@ -16,11 +16,10 @@
   width: 30px;
 }
 
-// .menu-items{
-//   margin-top: 95px;
-//   z-index: 5;
-
-// }
+.menu-items {
+  margin-top: 95px;
+  z-index: 5;
+}
 
 .menu-items {
   border-left: 2px solid #dedede;
@@ -28,6 +27,5 @@
   padding-left: 24px;
 
   > a {
-    @apply aa--mx-1;
   }
 }
