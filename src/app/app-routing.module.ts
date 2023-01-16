@@ -33,6 +33,10 @@ const routes: Routes = [
       { path: 'd3js', title: 'd3js', component: D3jsContainerComponent },
     ],
   },
+  {
+    path: 'blog',
+    loadChildren: () => import('./blog/blog.module').then((m) => m.BlogModule),
+  },
 ];
 
 @Injectable({ providedIn: 'root' })

@@ -30,6 +30,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MapsDashboardComponent } from './dashboards/maps-dashboard/maps-dashboard.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MapCardComponent } from './cards/map-card/map-card.component';
+import { HttpClientModule } from '@angular/common/http';
 Chart.register(VennDiagramController, ArcSlice);
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ Chart.register(VennDiagramController, ArcSlice);
     MatGridListModule,
     MatMenuModule,
     MatProgressBarModule,
+    HttpClientModule,
   ],
   providers: [
     {

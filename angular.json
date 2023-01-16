@@ -116,5 +116,6 @@
   },
   "cli": {
     "analytics": false
-  }
+  },
+  "defaultProject": "attune-reviewer"
 }

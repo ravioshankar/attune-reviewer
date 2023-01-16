@@ -3,5 +3,21 @@
   { "route": "/maps" },
   { "route": "/charts" },
   { "route": "/charts/chartjs" },
-  { "route": "/charts/d3js" }
+  { "route": "/charts/d3js" },
+  {
+    "route": "/blog/2023-01-15-blog",
+    "title": "2023-01-15-blog",
+    "description": "blog description",
+    "published": true,
+    "slug": "2023-01-15-blog",
+    "sourceFile": "2023-01-15-blog.md"
+  },
+  {
+    "route": "/blog/2023-01-16-blog",
+    "title": "2023-01-16-blog",
+    "description": "blog description",
+    "published": true,
+    "slug": "2023-01-16-blog",
+    "sourceFile": "2023-01-16-blog.md"
+  }
 ]

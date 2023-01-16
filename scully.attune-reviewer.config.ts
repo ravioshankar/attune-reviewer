@@ -7,5 +7,12 @@ export const config: ScullyConfig = {
   distFolder: './dist/attune-reviewer', // output directory of your Angular build artifacts
   outDir: './dist/static', // directory for scully build artifacts
   defaultPostRenderers: [],
-  routes: {},
+  routes: {
+    '/blog/:slug': {
+      type: 'contentFolder',
+      slug: {
+        folder: './blog',
+      },
+    },
+  },
 };
