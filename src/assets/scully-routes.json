@@ -1,0 +1,7 @@
+[
+  { "route": "/" },
+  { "route": "/maps" },
+  { "route": "/charts" },
+  { "route": "/charts/chartjs" },
+  { "route": "/charts/d3js" }
+]

@@ -8,6 +8,7 @@
     "test": "ng run attune-reviewer:test",
     "postinstall": "node ./decorate-angular-cli.js",
     "prepare": "husky install",
+    "scully": "scully --project=attune-reviewer",
     "doc:local": "compodoc -p ./tsconfig.compodoc.json -s -o -w",
     "doc:app": "compodoc -p ./tsconfig.app.json --hideGenerator --disableCoverage --output=documentation"
   },
@@ -27,6 +28,7 @@
     "@compodoc/compodoc": "^1.1.19",
     "@materia-ui/ngx-monaco-editor": "^6.0.0",
     "@scullyio/init": "^2.1.41",
+    "@scullyio/scully-plugin-puppeteer": "^2.1.41",
     "@types/chart.js": "^2.9.37",
     "@types/ol": "^6.5.3",
     "@upsetjs/venn.js": "^1.4.2",
@@ -36,6 +38,7 @@
     "monaco-editor": "^0.34.1",
     "ng2-charts": "^4.1.1",
     "ngx-monaco-editor": "^12.0.0",
+    "nx": "^15.5.1",
     "ol": "^6.15.1",
     "rxjs": "~7.8.0",
     "tippy.js": "^6.3.7",

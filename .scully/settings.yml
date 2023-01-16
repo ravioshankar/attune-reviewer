@@ -1,0 +1,11 @@
+identifier: lbc8ze1415v4odeb
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: attune-reviewer
+homeFolder: C:\Users\ravio\Documents\github\attune-reviewer
+distFolder: ./dist/attune-reviewer
+outDir: C:\Users\ravio\Documents\github\attune-reviewer\dist\static
+handle404: ""
+allowErrorCollect: true
