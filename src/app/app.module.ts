@@ -13,7 +13,6 @@ import { MapViewerComponent } from './map-viewer/map-viewer.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ToolpanelComponent } from './toolpanel/toolpanel.component';
 import { DataEditorComponent } from './data-editor/data-editor.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MONACO_PATH } from '@materia-ui/ngx-monaco-editor';
@@ -54,7 +53,6 @@ Chart.register(VennDiagramController, ArcSlice);
     MatButtonModule,
     MatExpansionModule,
     MatCardModule,
-    FlexLayoutModule,
     MonacoEditorModule,
     MatButtonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
